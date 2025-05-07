@@ -241,7 +241,6 @@ class Dify(PluginBase):
     async def handle_text(self, bot: WechatAPIClient, message: dict):
         if not self.enable:
             return
-
         content = message["Content"].strip()
         command = content.split(" ")[0] if content else ""
 
