@@ -1,0 +1,29 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 📝 XXXBot 项目概览
+
+XXXBot是一个基于微信的智能机器人系统，通过整合多种API和功能，提供了丰富的交互体验。
+
+## 📂 项目结构
+
+- [main.py](mdc:main.py): 项目入口文件，包含主程序启动逻辑
+- [bot_core.py](mdc:bot_core.py): 机器人核心功能实现
+- [main_config.toml.example](mdc:main_config.toml.example): 配置文件模板
+- [requirements.txt](mdc:requirements.txt): 项目依赖列表
+
+## 🔄 协议支持
+
+系统支持多种微信协议版本:
+- **849协议**: 适用于iPad版本，使用`/VXAPI`路径前缀
+- **855协议**: 适用于安卓PAD版本，使用`/api`路径前缀
+- **ipad协议**: 适用于新版iPad协议，使用`/api`路径前缀
+
+## 📁 主要目录
+
+- **admin/**: 管理后台相关代码
+- **plugins/**: 插件系统和插件目录
+- **WechatAPI/**: 微信API相关代码
+- **utils/**: 工具函数和辅助模块

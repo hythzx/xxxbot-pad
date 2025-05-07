@@ -1,0 +1,48 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 🔌 XXXBot 插件开发指南
+
+## 📂 插件结构
+
+标准插件目录结构：
+```
+plugins/
+└── YourPlugin/
+    ├── __init__.py      # 插件入口点
+    ├── main.py          # 插件主要代码
+    ├── config.toml      # 插件配置文件
+    └── README.md        # 插件说明文档
+```
+
+## 🚀 插件开发步骤
+
+1. 创建目录: `plugins/YourPlugin/`
+2. 创建插件基本文件
+3. 在[main.py](mdc:plugins/ExamplePlugin/main.py)中实现插件逻辑
+4. 使用[config.toml](mdc:plugins/ExamplePlugin/config.toml)配置插件
+
+## 📋 消息处理装饰器
+
+XXXBot提供多种装饰器处理不同类型消息：
+
+| 装饰器              | 描述         |
+|-------------------|--------------|
+| `@on_text_message`  | 处理文本消息   |
+| `@on_image_message` | 处理图片消息   |
+| `@on_voice_message` | 处理语音消息   |
+| `@on_video_message` | 处理视频消息   |
+| `@on_file_message`  | 处理文件消息   |
+
+## 🔄 插件生命周期
+
+插件生命周期方法：
+- `on_load()`: 插件加载时调用
+- `on_unload()`: 插件卸载时调用
+- `on_reload()`: 插件重载时调用
+
+## 🧩 示例插件
+
+[ExamplePlugin](mdc:plugins/ExamplePlugin/main.py)提供了基础的插件开发示例。

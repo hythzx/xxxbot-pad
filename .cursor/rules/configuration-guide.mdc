@@ -1,0 +1,48 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# ⚙️ XXXBot 配置指南
+
+XXXBot使用TOML格式的配置文件进行设置。主配置文件为[main_config.toml](mdc:main_config.toml)。
+
+## 📄 基本配置
+
+配置文件分为几个主要部分:
+
+### 协议配置
+```toml
+[Protocol]
+version = "849"  # 可选值: "849", "855" 或 "ipad"
+```
+
+### 框架配置
+```toml
+[Framework]
+type = "default"  # 可选值: "default", "dow" 或 "dual"
+```
+
+### 机器人配置
+```toml
+[XYBot]
+# 管理员微信ID，设置多个用英文逗号分隔
+admins = ["wxid_example1", "wxid_example2"]
+
+# GitHub加速服务设置
+github-proxy = "https://ghfast.top/"
+```
+
+### 通知配置
+```toml
+[Notification]
+enabled = true
+token = "your_pushplus_token"
+channel = "wechat"
+```
+
+## 📝 配置步骤
+
+1. 复制[main_config.toml.example](mdc:main_config.toml.example)为`main_config.toml`
+2. 根据需要修改配置参数
+3. 重启系统使配置生效

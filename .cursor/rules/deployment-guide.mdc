@@ -1,0 +1,53 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 🚀 XXXBot 部署指南
+
+## 💻 系统要求
+
+- Python 3.11+
+- Redis
+- FFmpeg
+- 微信客户端（支持PAD协议或WeChatAPI）
+
+## 📦 安装方法
+
+### 方法一：直接安装
+
+1. **安装依赖**
+```bash
+pip install -r requirements.txt
+```
+
+2. **配置环境**
+- 安装并启动Redis服务
+- 安装FFmpeg并确保可在命令行访问
+- 复制并修改[main_config.toml.example](mdc:main_config.toml.example)
+
+3. **启动服务**
+```bash
+python main.py
+```
+
+### 方法二：Docker部署
+
+使用[Docker-Compose](mdc:docker-compose.yml)进行部署：
+
+```bash
+docker-compose up -d
+```
+
+## 🔄 启动流程
+
+1. 启动Redis服务
+2. 启动微信PAD/API服务
+3. 启动XXXBot主程序
+4. 完成微信登录
+
+## 🛠️ 故障排除
+
+- 检查[requirements.txt](mdc:requirements.txt)中的依赖是否完整安装
+- 确认[main_config.toml](mdc:main_config.toml)配置是否正确
+- 查看日志文件排查错误

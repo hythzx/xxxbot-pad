@@ -1,0 +1,44 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 📱 XXXBot 微信API指南
+
+## 📂 API结构
+
+XXXBot的微信API组件位于[WechatAPI](mdc:WechatAPI)目录，主要包含：
+
+- **Client**: 客户端API实现
+- **Server**: 服务端API实现
+- **core**: 核心功能实现
+- **errors.py**: 错误类定义
+
+## 🔄 API调用流程
+
+插件中通常使用`WechatAPIClient`来发送消息和调用API：
+
+```python
+from WechatAPI import WechatAPIClient
+
+async def send_message(bot: WechatAPIClient, to_wxid: str, content: str):
+    await bot.send_text_message(to_wxid, content)
+```
+
+## 📝 主要API方法
+
+### 消息发送
+- `send_text_message()`: 发送文本消息
+- `send_image_message()`: 发送图片消息
+- `send_file_message()`: 发送文件消息
+- `send_voice_message()`: 发送语音消息
+
+### 联系人操作
+- `get_contact_list()`: 获取联系人列表
+- `get_room_members()`: 获取群成员列表
+- `search_contact()`: 搜索联系人
+
+### 其他功能
+- `get_self_info()`: 获取当前登录账号信息
+- `check_login_status()`: 检查登录状态
+- `get_login_qrcode()`: 获取登录二维码
